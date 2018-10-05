@@ -31,6 +31,20 @@ def simple
   end
 end
 
+def triplet?(a, b, c)
+  return true if (c ** 2 == (a ** 2 + b ** 2))
+  false
+end
+
+def better
+  (1..1000).each do |a|
+    (a..1000).each do |b|
+      c = (1000 - a - b)
+      return (a * b * c) if triplet?(a, b, c)
+    end
+  end
+end
+
 run(9) do
-  simple
+  better
 end

@@ -20,10 +20,39 @@ def primes
   end
 end
 
+
+def is_prime?(n)
+  return false if n == 1
+  return true if n < 4
+  return false if n % 2 == 0
+  return true if n < 9
+  return false if n % 3 == 0
+
+  pos = 5
+  while pos <= (Math.sqrt(n)).floor
+    return false if n % pos == 0
+    return false if n % (pos + 2) == 0
+
+    pos += 6
+  end
+
+  true
+end
+
 def simple
   primes.inject(&:+)
 end
 
+def better
+  sum = 0
+
+  (2..2_000_000).each do |n|
+    sum += n if is_prime?(n)
+  end
+
+  sum
+end
+
 run(10) do
-  simple
+  better
 end
