@@ -46,7 +46,7 @@ def adj(r, c)
   ].select { |c| c.length == 4 }
 end
 
-run(11) do
+def simple
   max = 0
 
   (0..$size).to_a.each do |r|
@@ -59,4 +59,8 @@ run(11) do
   end
 
   max
+end
+
+run(11) do
+  simple
 end
