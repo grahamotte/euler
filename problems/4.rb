@@ -10,7 +10,6 @@ def palindromes
   $pals ||= (100..999)
     .to_a
     .map { |p| "#{p.to_s}#{p.to_s.reverse}".to_i }
-
 end
 
 def simple

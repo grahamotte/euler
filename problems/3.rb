@@ -4,20 +4,6 @@ require_relative '../lib/helper'
 
 # What is the largest prime factor of the number 600851475143 ?
 
-class Array
-  def delete_first item
-    delete_at(index(item) || length)
-  end
-end
-
-def smallest_divisor(num)
-  n = 2
-  while n < num && num % n != 0 do
-     n += 1
-  end
-  n
-end
-
 def simple
   divisors = [600851475143]
   primes = []

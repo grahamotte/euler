@@ -20,7 +20,6 @@ def primes
   end
 end
 
-
 def is_prime?(n)
   return false if n == 1
   return true if n < 4

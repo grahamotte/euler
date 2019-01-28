@@ -4,17 +4,6 @@ require_relative '../lib/helper'
 
 # What is the 10 001st prime number?
 
-def is_prime(n)
-  c = 2
-
-  loop do
-    return false if n % c == 0
-    return true if c > n / 2
-
-    c += 1
-  end
-end
-
 def simple
   prime_count = 0
   cursor = 1
