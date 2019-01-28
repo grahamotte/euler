@@ -1,4 +1,5 @@
 require 'benchmark'
+require 'pp'
 require_relative 'answers'
 
 def run(prob = 'unknown')
