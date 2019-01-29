@@ -1,3 +1,15 @@
+class Array
+  def delete_first item
+    delete_at(index(item) || length)
+  end
+end
+
+class Integer
+  def choose(k)
+    ((self - k + 1)..self).inject(1, &:*) / (2..k).inject(1, &:*)
+  end
+end
+
 def is_prime(n)
   c = 2
 
@@ -27,12 +39,6 @@ def divisors(n)
         divs << n / d
       end
     end
-  end
-end
-
-class Array
-  def delete_first item
-    delete_at(index(item) || length)
   end
 end
 
