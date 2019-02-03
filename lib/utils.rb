@@ -14,6 +14,24 @@ class Integer
   end
 end
 
+def sort(array, &block)
+  block ||= ->(a, b) { a <= b }
+  return array if array.length <= 1
+
+  mid = array.delete_at(array.length / 2)
+  left, right = [], []
+
+  array.each do |x|
+    if block.call(x, mid)
+      left << x
+    else
+      right << x
+    end
+  end
+
+  return [*sort(left, &block), mid ,*sort(right, &block)]
+end
+
 def is_prime(n)
   c = 2
 
