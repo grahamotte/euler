@@ -8,6 +8,10 @@ class Integer
   def choose(k)
     ((self - k + 1)..self).inject(1, &:*) / (2..k).inject(1, &:*)
   end
+
+  def factorial
+    (1..self).reduce(&:*)
+  end
 end
 
 def is_prime(n)
