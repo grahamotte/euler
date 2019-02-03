@@ -7,10 +7,6 @@ require_relative '../lib/helper'
 
 # Evaluate the sum of all the amicable numbers under 10000.
 
-def proper_divisors(n)
-  divisors(n) - [n]
-end
-
 def sum_proper_divisors(n)
   proper_divisors(n).reduce(&:+)
 end

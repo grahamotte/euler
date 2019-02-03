@@ -1,5 +1,6 @@
 require 'benchmark'
 require 'pp'
+require 'set'
 require_relative 'utils'
 require_relative 'answers'
 

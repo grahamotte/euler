@@ -51,8 +51,12 @@ def is_triangle(n)
   is_square((8 * n) + 1)
 end
 
+def proper_divisors(n)
+  divisors(n) - [n]
+end
+
 def divisors(n)
-  [].tap do |divs|
+  [].to_set.tap do |divs|
     (1..Math.sqrt(n).ceil).each do |d|
       next if divs.include?(d)
 
