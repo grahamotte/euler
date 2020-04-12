@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 
@@ -27,6 +27,6 @@ def simple
   end
 end
 
-run(5) do
+run do
   simple
 end

@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 
@@ -36,10 +36,10 @@ def better
   end
 end
 
-# run(4) do
+# run do
 #   simple
 # end
 
-run(4) do
+run do
   better
 end

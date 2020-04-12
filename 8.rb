@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 
@@ -37,6 +37,6 @@ def simple
     .max
 end
 
-run(8) do
+run do
   simple
 end

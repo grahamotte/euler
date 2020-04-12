@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # The Fibonacci sequence is defined by the recurrence relation:
 
@@ -33,6 +33,6 @@ def simple
   end
 end
 
-run(25) do
+run do
   simple
 end

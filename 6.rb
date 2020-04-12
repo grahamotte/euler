@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # The sum of the squares of the first ten natural numbers is,
 # 1^2 + 2^2 + ... + 10^2 = 385
@@ -16,6 +16,6 @@ def simple
   sum_sqd - sqd_sum
 end
 
-run(6) do
+run do
   simple
 end

@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n).
 # If d(a) = b and d(b) = a, where a ≠ b, then a and b are an amicable pair and each of a and b are called amicable numbers.
@@ -24,6 +24,6 @@ def simple
   sum
 end
 
-run(21) do
+run do
   simple
 end

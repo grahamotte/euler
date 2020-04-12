@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
 
@@ -61,6 +61,6 @@ def simple
   max
 end
 
-run(11) do
+run do
   simple
 end

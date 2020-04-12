@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # n! means n × (n − 1) × ... × 3 × 2 × 1
 
@@ -11,6 +11,6 @@ def simple
   100.factorial.to_s.split('').map(&:to_i).reduce(&:+)
 end
 
-run(20) do
+run do
   simple
 end

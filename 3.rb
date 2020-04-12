@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # The prime factors of 13195 are 5, 7, 13 and 29.
 
@@ -33,6 +33,6 @@ def simple
   divisors.max
 end
 
-run(3) do
+run do
   simple
 end

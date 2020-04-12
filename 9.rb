@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
 
@@ -45,6 +45,6 @@ def better
   end
 end
 
-run(9) do
+run do
   better
 end

@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
 
@@ -113,6 +113,6 @@ def simple
   n.to_s[0..9].to_i
 end
 
-run(13) do
+run do
   simple
 end

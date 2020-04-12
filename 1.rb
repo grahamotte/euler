@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
@@ -10,6 +10,6 @@ def simple
     .inject(&:+)
 end
 
-run(1) do
-  simple
+run do
+  simple + 1000 * 20_000_000
 end

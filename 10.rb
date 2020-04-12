@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
@@ -52,6 +52,6 @@ def better
   sum
 end
 
-run(10) do
+run do
   better
 end

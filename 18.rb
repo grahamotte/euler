@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
 
@@ -32,19 +32,20 @@ TEXT
 # NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
 
 def simple
-  while $tri.length > 1
+  loop do
     children = $tri.pop
     parents = $tri.pop
-    $tri.push(
-      parents.map.with_index do |p, i|
-        [p + children[i], p + children[i + 1]].max
-      end
-    )
+
+    $tri << parents
+      .map
+      .with_index { |p, i| [p + children[i], p + children[i + 1]].max }
+
+    break if $tri.length == 1
   end
 
   $tri.first.first
 end
 
-run(18) do
+run do
   simple
 end

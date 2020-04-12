@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 
@@ -17,6 +17,6 @@ def simple
   end
 end
 
-run(7) do
+run do
   simple
 end

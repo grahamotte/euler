@@ -1,22 +1,30 @@
+require "rubygems/text"
 require 'benchmark'
 require 'pp'
 require 'set'
 require_relative 'utils'
-require_relative 'answers'
 
-def run(prob = 'unknown')
-  bm = Benchmark.measure { $result = yield }
+ANSWERS = File.readlines('data/answers.txt').map(&:chomp)
 
-  if ANSWERS[prob] == $result
-    puts "#{$result} is the correct answer!"
+def problem_no
+  $problem_no || $PROGRAM_NAME.rpartition('/').last.gsub('.rb', '').to_i
+end
+
+def answer
+  ANSWERS.fetch(problem_no).to_s
+end
+
+def ld
+  Class.new.extend(Gem::Text).method(:levenshtein_distance)
+end
+
+def run()
+  bm = Benchmark.measure { $result = yield.to_s }
+
+  if $result == answer
+    puts "#{$result} is correct! (#{bm.real.round(2)}s)"
   else
-    aaa = ANSWERS[prob].to_f / $result
-    aaa = 1 / aaa if aaa < 1
-    aaa = 'a' * aaa.to_i
-    aaa = aaa[0..10]
-
-    puts "Whoa, #{$result} is w#{aaa}y off..."
+    aaa = 'a' * ld.call(answer, $result)
+    puts "Try again... #{$result} is w#{aaa}y off. (#{bm.real.round(2)}s)"
   end
-
-  puts bm
 end

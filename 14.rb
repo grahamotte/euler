@@ -1,4 +1,4 @@
-require_relative '../lib/helper'
+require_relative 'lib/helper'
 
 # The following iterative sequence is defined for the set of positive integers:
 
@@ -56,6 +56,6 @@ def simple
   longest_n
 end
 
-run(14) do
+run do
   simple
 end
