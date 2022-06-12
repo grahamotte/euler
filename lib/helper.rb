@@ -18,7 +18,7 @@ def ld
   Class.new.extend(Gem::Text).method(:levenshtein_distance)
 end
 
-def run()
+def run
   bm = Benchmark.measure { $result = yield.to_s }
 
   if $result == answer
